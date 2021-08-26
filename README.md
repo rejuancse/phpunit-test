@@ -22,6 +22,12 @@ Manually run this command
 $ ./vendor/bin/phpunit
 ```
 
+Run this command for connect autoloading
+
+```
+$ composer dump-autoload -o
+```
+
 ## PHPUnit Site Link
 
 - [PHPUnit](https://phpunit.de/)
