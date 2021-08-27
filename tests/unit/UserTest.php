@@ -5,22 +5,25 @@ use PHPUnit\Framework\TestCase;
 
 class UserTest extends TestCase
 {
-    public function testGetTheFirstName()
+    protected $user;
+
+    public function userSetUp()
     {
-        $user = new \App\Models\User;
-
-        $user->setFirstName('Alex');
-
-        $this->assertEquals($user->getFirstName(), 'Alex');
+        $this->user = new \App\Models\User;
     }
 
-    public function testGetTheLatName()
+    public function GetTheFirstName()
     {
-        $user = new \App\Models\User;
+        $this->user->setFirstName('Alex');
 
-        $user->setLastName('Carry');
+        $this->assertEquals($this->user->getFirstName(), 'Alex');
+    }
 
-        $this->assertEquals($user->getLastname(), 'Carry');
+    public function GetTheLatName()
+    {
+        $this->user->setLastName('Carry');
+
+        $this->assertEquals($this->user->getLastname(), 'Carry');
     }
 
     public function testGetTheFullNameReturn()
