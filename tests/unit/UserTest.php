@@ -1,5 +1,5 @@
 <?php
-require_once 'PHPUnit/Autoload.php';
+
 // Namespace
 use PHPUnit\Framework\TestCase;
 
