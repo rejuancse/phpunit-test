@@ -41,4 +41,23 @@ class CollectionTest extends TestCase
         $collection = new \App\Support\Collection();
         $this->assertInstanceOf(IteratorAggregate::class, $collection);
     }
+
+    /** @test */
+    public function collection_can_be_iterated()
+    {
+        $collection = new \App\Support\Collection([
+            'one', 'two', 'three'
+        ]);
+
+        $items = [];
+
+        foreach($collection as $item)
+        {
+            $items[] = $item;
+        }
+
+        $this->assertCount(3, $items);
+
+        $this->assertInstanceOf(ArrayIterator::class, $collection->getIterator());
+    } 
 }

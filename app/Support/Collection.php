@@ -4,6 +4,8 @@ namespace App\Support;
 
 use IteratorAggregate;
 
+use ArrayIterator;
+
 class Collection implements IteratorAggregate
 {
     protected $items = [];
@@ -25,6 +27,6 @@ class Collection implements IteratorAggregate
 
     public function getIterator()
     {
-        return [];
+        return new ArrayIterator($this->items);
     }
 }
